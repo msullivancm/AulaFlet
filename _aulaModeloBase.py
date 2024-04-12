@@ -1,7 +1,3 @@
-from os import link
-from re import T
-from turtle import bgcolor, color
-from click import style
 import flet as ft
 
 def main(page:ft.Page):
