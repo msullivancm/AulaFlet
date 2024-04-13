@@ -1,11 +1,18 @@
 import flet as ft
 
+#gerar compilações
+##para windows
+#flet build windows --module-name .\dispensable_cards.py --project "Marvel Cards"
+##para web
+#flet build web --module-name .\dispensable_cards.py --project "Marvel Cards"
+##para android
+#flet build apk --module-name .\dispensable_cards.py --project "Marvel Cards"
 
 def main(page: ft.Page):
-    page.window_top = 0
-    page.window_left = 2120.0
-    page.window_width = 450
-    page.window_height = 1000
+    # page.window_top = 0
+    # page.window_left = 2120.0
+    # page.window_width = 450
+    # page.window_height = 1000
 
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
@@ -14,12 +21,14 @@ def main(page: ft.Page):
     page.bgcolor = ft.colors.WHITE
 
     images = [
-        'https://th.bing.com/th?id=OIP.6qpVJwvjH9StXx-bBtICwgHaK9&w=205&h=304&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2',
-        'https://th.bing.com/th?id=OIP.6qpVJwvjH9StXx-bBtICwgHaK9&w=205&h=304&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2',
-        'https://th.bing.com/th?id=OIP.6qpVJwvjH9StXx-bBtICwgHaK9&w=205&h=304&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2',
-        'https://th.bing.com/th?id=OIP.6qpVJwvjH9StXx-bBtICwgHaK9&w=205&h=304&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2',
-        'https://th.bing.com/th?id=OIP.6qpVJwvjH9StXx-bBtICwgHaK9&w=205&h=304&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2',
-        'https://th.bing.com/th?id=OIP.6qpVJwvjH9StXx-bBtICwgHaK9&w=205&h=304&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2',
+        'assets/images/poster1.jpg',
+        'assets/images/poster2.jpg',
+        'assets/images/poster3.jpg',
+        'assets/images/poster4.jpg',
+        'assets/images/poster5.jpg',
+        'assets/images/poster6.jpg',
+        'assets/images/poster7.jpg',
+        'assets/images/poster8.jpg',
     ]
 
     def change_posters():

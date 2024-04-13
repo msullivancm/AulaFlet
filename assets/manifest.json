@@ -1,0 +1,9 @@
+{
+  "name": "TIBrasil.net",
+  "short_name": "TIBrasil",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "TIBrasil.net Serviços de TI"
+}
