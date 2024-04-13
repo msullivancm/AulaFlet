@@ -21,11 +21,11 @@ def main(page: ft.Page):
     page.bgcolor = ft.colors.WHITE
 
     images = [
-        'assets/images/poster1.jpg',
-        'assets/images/poster2.jpg',
-        'assets/images/poster3.jpg',
-        'assets/images/poster4.jpg',
-        'assets/images/poster5.jpg',
+        'https://github.com/msullivancm/AulaFlet/blob/52a04b17053db3141b044aa0b7d79f9c30fe7804/assets/images/poster1.jpg',
+        'https://github.com/msullivancm/AulaFlet/blob/52a04b17053db3141b044aa0b7d79f9c30fe7804/assets/images/poster2.jpg',
+        'https://github.com/msullivancm/AulaFlet/blob/52a04b17053db3141b044aa0b7d79f9c30fe7804/assets/images/poster3.jpg',
+        'https://github.com/msullivancm/AulaFlet/blob/52a04b17053db3141b044aa0b7d79f9c30fe7804/assets/images/poster4.jpg',
+        'https://github.com/msullivancm/AulaFlet/blob/52a04b17053db3141b044aa0b7d79f9c30fe7804/assets/images/poster5.jpg',
         'assets/images/poster6.jpg',
         'assets/images/poster7.jpg',
         'assets/images/poster8.jpg',
