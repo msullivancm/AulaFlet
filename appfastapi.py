@@ -32,8 +32,21 @@ async def main(page: ft.Page):
     data = await fetch_data('http://127.0.0.1:8080/user/1')
     await page.add_async(ft.Text(data['user']))
 
+async def loja(page: ft.Page):
+    async def route_change(route):
+        troute = ft.TemplateRoute(page.route)
+        if troute.match('/:produto'):
+            await page.add_async(ft.Text(f'Produto: {troute.produto}'))
+        else:
+            await page.add_async(ft.Text('Página não foi encontrada!'))
+    page.on_route_change = route_change
+    await page.add_async(ft.Text(value='loja'))
+    await page.go_async(page.route)
+
+app.mount(path='/loja',app=flet_fastapi.app(loja))
 app.mount(path='/',app=flet_fastapi.app(main))
 
 ###Iniciando o server fastapi
 #uvicorn appfastapi:app --port 8080 --reload
 #documentação em swagger: http://127.0.0.1:8080/docs
+##lembrando que é necessário adicionar o / no final da rota sempre que for acessar uma rota que não seja a raiz
