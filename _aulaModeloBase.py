@@ -1,7 +1,7 @@
 import flet as ft
 
 def main(page:ft.Page):
-    page.window_width = 300.0
+    page.window_width = 600.0
     page.window_height = 1039.0
     page.window_top = 0
     page.window_left = 0
