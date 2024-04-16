@@ -17,9 +17,12 @@ def main(page: ft.Page):
         ft.FilledButton('Salvar'),
     ]),
         color=ft.colors.GREY_900,
-        width=200,
-        height=150,
-        elevation=5,)
+        width=300,
+        height=200,
+        elevation=5,
+    margin=ft.margin.all(30),
+    shadow_color=ft.colors.WHITE,
+    )
 
     elementos = [
         card,
