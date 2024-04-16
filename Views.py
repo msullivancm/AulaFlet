@@ -2,7 +2,7 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    page.window_width = 600.0
+    page.window_width = 400.0
     page.window_height = 1039.0
     page.window_top = 0
     page.window_left = 0
@@ -41,18 +41,20 @@ def main(page: ft.Page):
                 scroll=ft.ScrollMode.AUTO,
                 auto_scroll=False,
                 bgcolor=ft.colors.BLACK,
-                drawer=ft.NavigationDrawer([
+
+                drawer=ft.NavigationDrawer(controls=[
                     ft.NavigationDrawerDestination(label='Home', icon=ft.icons.HOME),
                     ft.NavigationDrawerDestination(label='Loja', icon=ft.icons.STORE),
                     ft.NavigationDrawerDestination(label='App', icon=ft.icons.PHONE_IPHONE),
                 ],
-                on_change=change_route),
-                end_drawer=ft.NavigationDrawer([
+                    on_change=change_route),
+                end_drawer=ft.NavigationDrawer(controls=[
                     ft.NavigationDrawerDestination(label='Perfil', icon=ft.icons.PERSON),
                     ft.NavigationDrawerDestination(label='Configurações', icon=ft.icons.SETTINGS),
                     ft.NavigationDrawerDestination(label='Sair', icon=ft.icons.EXIT_TO_APP),
                 ],
-                on_change=change_route),
+                    on_change=change_route),
+
                 floating_action_button=ft.FloatingActionButton(
                     icon=ft.icons.PHONE_IPHONE,
                     on_click=lambda _: page.go('/app')
@@ -80,7 +82,7 @@ def main(page: ft.Page):
                             on_click=lambda _: page.go('/app')
                         )
                     ],
-                    fullscreen_dialog=True, #Muda a animação e disposição da tela como se fosse um popup de tela inteira
+                    fullscreen_dialog=True, #Muda a animação e disposição dos elementos
                 )
             )
 
