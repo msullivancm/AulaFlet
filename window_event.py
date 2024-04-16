@@ -16,7 +16,8 @@ def main(page:ft.Page):
     page.window_width = 300.0
     page.window_height = 1039.0
     page.window_top = 0
-    page.window_left = 1627.0
+    page.window_left = 0
+    #Page resized 328.0 1039.0 0.0 -7.0
     
     #Exibe barra de progresso no icone do flet
     page.window_progress_bar = 0.5

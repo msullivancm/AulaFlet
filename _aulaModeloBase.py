@@ -3,8 +3,8 @@ import flet as ft
 def main(page:ft.Page):
     page.window_width = 300.0
     page.window_height = 1039.0
-    page.window_top = 0.0
-    page.window_left = 1600.0
+    page.window_top = 0
+    page.window_left = 0
     #Page resized 300.0 1039.0 0.0 1627.0
     
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
