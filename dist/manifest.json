@@ -1,0 +1,9 @@
+{
+  "name": "Marvel Posters",
+  "short_name": "MarvelPosters",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "TIBrasil.net Servi\u00c3\u00a7os de TI"
+}
