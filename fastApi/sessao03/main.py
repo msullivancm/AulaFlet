@@ -16,6 +16,7 @@ from fastapi import status
 from models import Curso
 
 app = FastAPI()
+app.title = "Aula de FastAPI"
 
 cursos = {
     1: {
@@ -43,7 +44,7 @@ async def get_curso(curso_id: int):
     except KeyError:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Curso não encontrado.')
 
-@app.post('/cursos')
+@app.post('/cursos', status_code=status.HTTP_201_CREATED )
 async def post_curso(curso: Curso):
     next_id: int = len(cursos) + 1
     if curso.titulo not in cursos:
@@ -54,6 +55,22 @@ async def post_curso(curso: Curso):
     else: 
         raise HTTPException(status_code=status.HTTP_409_CONFLICT,
                             detail=f'Já existe o curso com ID {curso.id}.')
+
+@app.put('/cursos/{curso_id}')
+async def put_curso(curso_id: int, curso: Curso):
+    if curso_id in cursos:
+        cursos[curso_id] = curso
+        return curso
+    else: 
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Registro não encontrado.')
+
+@app.delete('/cursos/{curso_id}', status_code=status.HTTP_204_NO_CONTENT)
+async def delete_curso(curso_id: int):
+    if curso_id in cursos:
+        del cursos[curso_id]
+        return {"message": "Curso excluído com sucesso."}
+    else:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail='Registro não encontrado.')
 
 if __name__ == '__main__':
     import uvicorn 

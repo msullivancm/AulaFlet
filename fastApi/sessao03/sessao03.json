@@ -24,6 +24,20 @@
                 "url": "http://localhost:8000/cursos",
                 "method": "POST"
             }
+        },
+        {
+            "name": "put_curso",
+            "request": {
+                "url": "http://localhost:8000/cursos/{curso_id}",
+                "method": "PUT"
+            }
+        },
+        {
+            "name": "delete_curso",
+            "request": {
+                "url": "http://localhost:8000/cursos/{curso_id}",
+                "method": "DELETE"
+            }
         }
     ]
 }
