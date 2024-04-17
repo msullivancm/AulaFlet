@@ -1,0 +1,29 @@
+{
+    "info": {
+        "name": "FastAPI API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "get_cursos",
+            "request": {
+                "url": "http://localhost:8000/cursos",
+                "method": "GET"
+            }
+        },
+        {
+            "name": "get_curso",
+            "request": {
+                "url": "http://localhost:8000/cursos/{curso_id}",
+                "method": "GET"
+            }
+        },
+        {
+            "name": "post_curso",
+            "request": {
+                "url": "http://localhost:8000/cursos",
+                "method": "POST"
+            }
+        }
+    ]
+}
