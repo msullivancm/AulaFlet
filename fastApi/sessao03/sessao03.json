@@ -38,6 +38,13 @@
                 "url": "http://localhost:8000/cursos/{curso_id}",
                 "method": "DELETE"
             }
+        },
+        {
+            "name": "calculadora",
+            "request": {
+                "url": "http://localhost:8000/calculadora",
+                "method": "GET"
+            }
         }
     ]
 }

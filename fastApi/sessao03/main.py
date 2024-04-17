@@ -89,6 +89,11 @@ async def delete_curso(curso_id: int):
         )
 
 
+@app.get('/calculadora')
+async def calculadora(a: int,b: int,c: int):
+    resultado = a + b + c
+    return {"resultado": resultado}
+
 if __name__ == "__main__":
     import uvicorn
 
