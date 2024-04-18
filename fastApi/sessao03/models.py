@@ -6,3 +6,11 @@ class Curso(BaseModel):
     titulo: str
     aulas: int
     horas: int 
+    
+""" cursos = [
+    Curso(id=1, titulo="Programação para leigos", aulas=112, horas=58),
+    Curso(id=2, titulo="Algoritmos e Lógica de Programação", aulas=87, horas=67),
+    Curso(id=3, titulo="Algoritmos e Lógica de Programação 2", aulas=100, horas=70),
+    Curso(id=4, titulo="Algoritmos e Lógica de Programação 3", aulas=140, horas=80),
+    Curso(id=5, titulo="Algoritmos e Lógica de Programação 4", aulas=150, horas=90),
+] """

@@ -19,8 +19,16 @@ from fastapi import Query
 from fastapi import Header
 from models import Curso
 
-app = FastAPI()
-app.title = "Aula de FastAPI"
+app = FastAPI(
+    title = "Aula de FastAPI",
+    version = "0.0.1",
+    description="Esta é uma API de exemplo criada na aula de FastAPI do Geek University.",
+    contact={
+        "name": "TIBrasil.net",
+        "url": "https://www.tibrasil.net",
+        "email": "msullivancm@gmail.com"
+    }
+)
 
 cursos = {
     1: {"titulo": "Programação para leigos", "aulas": 112, "horas": 58},
@@ -36,12 +44,18 @@ def fake_db():
     finally:
         print('Fechando banco de dados...')
 
-@app.get("/cursos")
+@app.get("/cursos", 
+         description="Retorna uma lista de cursos.", 
+         response_description="Lista de cursos.", 
+         response_model=dict[int, Curso])
 async def get_cursos(db: Any = Depends(fake_db)):
     return cursos
 
 
-@app.get("/cursos/{curso_id}")
+@app.get("/cursos/{curso_id}",
+         description="Retorna um curso pelo ID.",
+         response_description="Curso encontrado",
+         response_model=Curso)
 async def get_curso(
     curso_id: int = Path(
         title="ID do Curso",
@@ -61,7 +75,10 @@ async def get_curso(
         )
 
 
-@app.post("/cursos", status_code=status.HTTP_201_CREATED)
+@app.post("/cursos", status_code=status.HTTP_201_CREATED,
+          description="Inclui um novo curso.",
+         response_description="Curso incluído com sucesso.",
+         response_model=Curso)
 async def post_curso(curso: Curso, db: Any = Depends(fake_db)):
     next_id: int = len(cursos) + 1
     if curso.titulo not in cursos:
@@ -76,7 +93,10 @@ async def post_curso(curso: Curso, db: Any = Depends(fake_db)):
         )
 
 
-@app.put("/cursos/{curso_id}")
+@app.put("/cursos/{curso_id}",
+         description="Atualiza um curso pelo ID.",
+         response_description="Curso atualizado com sucesso.",
+         response_model=Curso)
 async def put_curso(curso_id: int, curso: Curso, db: Any = Depends(fake_db)):
     if curso_id in cursos:
         cursos[curso_id] = curso
@@ -87,7 +107,9 @@ async def put_curso(curso_id: int, curso: Curso, db: Any = Depends(fake_db)):
         )
 
 
-@app.delete("/cursos/{curso_id}", status_code=status.HTTP_204_NO_CONTENT)
+@app.delete("/cursos/{curso_id}", status_code=status.HTTP_204_NO_CONTENT,
+            description="Exclui um curso pelo ID.",
+            response_description="Curso excluído com sucesso.")
 async def delete_curso(curso_id: int, db: Any = Depends(fake_db)):
     if curso_id in cursos:
         del cursos[curso_id]
@@ -97,7 +119,7 @@ async def delete_curso(curso_id: int, db: Any = Depends(fake_db)):
             status_code=status.HTTP_404_NOT_FOUND, detail="Registro não encontrado."
         )
 
-@app.get('/calculadora')
+@app.get('/calculadora', description="Calculadora simples.", response_description="Resultado da operação.")
 async def calculadora(x: float, sinal: str, y: float, x_geek: str = Header(None, description='Header X-Geek', example='Geek University')):
     if sinal in ['+', '-', '*', '/']:
         if sinal == '+':
