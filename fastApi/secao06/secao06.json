@@ -1,0 +1,92 @@
+{
+    "info": {
+        "name": "FastAPI API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "post_artigo",
+            "request": {
+                "url": "http://localhost:8000/api/v1/artigos/",
+                "method": "POST"
+            }
+        },
+        {
+            "name": "get_artigos",
+            "request": {
+                "url": "http://localhost:8000/api/v1/artigos/",
+                "method": "GET"
+            }
+        },
+        {
+            "name": "get_artigo",
+            "request": {
+                "url": "http://localhost:8000/api/v1/artigos/{artigo_id}",
+                "method": "GET"
+            }
+        },
+        {
+            "name": "put_artigo",
+            "request": {
+                "url": "http://localhost:8000/api/v1/artigos/{artigo_id}",
+                "method": "PUT"
+            }
+        },
+        {
+            "name": "delete_artigo",
+            "request": {
+                "url": "http://localhost:8000/api/v1/artigos/{artigo_id}",
+                "method": "DELETE"
+            }
+        },
+        {
+            "name": "get_logado",
+            "request": {
+                "url": "http://localhost:8000/api/v1/usuarios/logado",
+                "method": "GET"
+            }
+        },
+        {
+            "name": "post_usuario",
+            "request": {
+                "url": "http://localhost:8000/api/v1/usuarios/signup",
+                "method": "POST"
+            }
+        },
+        {
+            "name": "get_usuarios",
+            "request": {
+                "url": "http://localhost:8000/api/v1/usuarios/",
+                "method": "GET"
+            }
+        },
+        {
+            "name": "get_usuario",
+            "request": {
+                "url": "http://localhost:8000/api/v1/usuarios/{usuario_id}",
+                "method": "GET"
+            }
+        },
+        {
+            "name": "put_usuario",
+            "request": {
+                "url": "http://localhost:8000/api/v1/usuarios/{usuario_id}",
+                "method": "PUT"
+            }
+        },
+        {
+            "name": "delete_usuario",
+            "request": {
+                "url": "http://localhost:8000/api/v1/usuarios/{usuario_id}",
+                "method": "DELETE"
+            }
+        },
+        {
+            "name": "login",
+            "request": {
+                "url": "http://localhost:8000/api/v1/usuarios/login",
+                "method": "POST"
+            }
+        }
+    ]
+}
