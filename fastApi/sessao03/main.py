@@ -19,6 +19,9 @@ from fastapi import Query
 from fastapi import Header
 from models import Curso
 
+from routes import curso_router
+from routes import usuario_router
+
 app = FastAPI(
     title = "Aula de FastAPI",
     version = "0.0.1",
@@ -135,6 +138,11 @@ async def calculadora(x: float, sinal: str, y: float, x_geek: str = Header(None,
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Operação inválida."
         )
+
+#incluindo as rotas dos routers
+app.include_router(curso_router.router, tags=['cursos'])
+app.include_router(usuario_router.router, tags=['usuarios'])
+
         
 if __name__ == "__main__":
     import uvicorn

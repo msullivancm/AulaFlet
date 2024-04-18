@@ -45,6 +45,20 @@
                 "url": "http://localhost:8000/calculadora",
                 "method": "GET"
             }
+        },
+        {
+            "name": "get_cursos",
+            "request": {
+                "url": "http://localhost:8000/api/v1/cursos",
+                "method": "GET"
+            }
+        },
+        {
+            "name": "get_usuarios",
+            "request": {
+                "url": "http://localhost:8000/api/v1/usuarios",
+                "method": "GET"
+            }
         }
     ]
 }
