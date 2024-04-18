@@ -88,12 +88,23 @@ async def delete_curso(curso_id: int):
             status_code=status.HTTP_404_NOT_FOUND, detail="Registro não encontrado."
         )
 
-
 @app.get('/calculadora')
-async def calculadora(a: int,b: int,c: int):
-    resultado = a + b + c
-    return {"resultado": resultado}
-
+async def calculadora(x: float, sinal: str, y: float):
+    if sinal in ['+', '-', '*', '/']:
+        if sinal == '+':
+            resultado = x + y
+        elif sinal == '-':
+            resultado = x - y
+        elif sinal == '*' or sinal.lower() == 'x':
+            resultado = x * y
+        elif sinal == '/':
+            resultado = x / y
+        return {"resultado": resultado}
+    else:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Operação inválida."
+        )
+        
 if __name__ == "__main__":
     import uvicorn
 
