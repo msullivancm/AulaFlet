@@ -122,7 +122,7 @@ async def delete_curso(curso_id: int, db: Any = Depends(fake_db)):
             status_code=status.HTTP_404_NOT_FOUND, detail="Registro não encontrado."
         )
 
-@app.get('/calculadora', description="Calculadora simples.", response_description="Resultado da operação.")
+@app.get('/calculadora', description="Calculadora simples.", response_description="Resultado da operação.", tags=['calculadora'])
 async def calculadora(x: float, sinal: str, y: float, x_geek: str = Header(None, description='Header X-Geek', example='Geek University')):
     if sinal in ['+', '-', '*', '/']:
         if sinal == '+':
