@@ -10,10 +10,13 @@ fastapi2postman --app nomedoarquivosemopontopy:app --output sessao03.json
 fastapi2postman --app main --output sessao03.json
 """
 
-from fastapi import FastAPI
+from typing import Any
+from fastapi import Depends, FastAPI
 from fastapi import HTTPException
 from fastapi import status
 from fastapi import Path
+from fastapi import Query
+from fastapi import Header
 from models import Curso
 
 app = FastAPI()
@@ -27,9 +30,14 @@ cursos = {
     5: {"titulo": "Algoritmos e Lógica de Programação 4", "aulas": 150, "horas": 90},
 }
 
+def fake_db():
+    try:
+        print('Abrindo banco de dados...')
+    finally:
+        print('Fechando banco de dados...')
 
 @app.get("/cursos")
-async def get_cursos():
+async def get_cursos(db: Any = Depends(fake_db)):
     return cursos
 
 
@@ -40,7 +48,8 @@ async def get_curso(
         description="Informe o ID do curso desejado entre 1 e 4.",
         gt=0,
         lt=5,
-    )
+    ),
+    db: Any = Depends(fake_db)
 ):
     try:
         curso = cursos[curso_id]
@@ -53,7 +62,7 @@ async def get_curso(
 
 
 @app.post("/cursos", status_code=status.HTTP_201_CREATED)
-async def post_curso(curso: Curso):
+async def post_curso(curso: Curso, db: Any = Depends(fake_db)):
     next_id: int = len(cursos) + 1
     if curso.titulo not in cursos:
         # exclui o atributo id do curso que, somente lá na frente será gerado por autonumeração do banco de dados. neste momento não é necessário.
@@ -68,7 +77,7 @@ async def post_curso(curso: Curso):
 
 
 @app.put("/cursos/{curso_id}")
-async def put_curso(curso_id: int, curso: Curso):
+async def put_curso(curso_id: int, curso: Curso, db: Any = Depends(fake_db)):
     if curso_id in cursos:
         cursos[curso_id] = curso
         return curso
@@ -79,7 +88,7 @@ async def put_curso(curso_id: int, curso: Curso):
 
 
 @app.delete("/cursos/{curso_id}", status_code=status.HTTP_204_NO_CONTENT)
-async def delete_curso(curso_id: int):
+async def delete_curso(curso_id: int, db: Any = Depends(fake_db)):
     if curso_id in cursos:
         del cursos[curso_id]
         return {"message": "Curso excluído com sucesso."}
@@ -89,7 +98,7 @@ async def delete_curso(curso_id: int):
         )
 
 @app.get('/calculadora')
-async def calculadora(x: float, sinal: str, y: float):
+async def calculadora(x: float, sinal: str, y: float, x_geek: str = Header(None, description='Header X-Geek', example='Geek University')):
     if sinal in ['+', '-', '*', '/']:
         if sinal == '+':
             resultado = x + y
@@ -99,7 +108,7 @@ async def calculadora(x: float, sinal: str, y: float):
             resultado = x * y
         elif sinal == '/':
             resultado = x / y
-        return {"resultado": resultado}
+        return {"resultado": resultado, "x_geek": x_geek}
     else:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Operação inválida."
