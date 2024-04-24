@@ -16,7 +16,7 @@ class SidebarHeader(ft.UserControl):
                         bgcolor=ft.colors.PRIMARY,
                         small_size=20,
                     ),
-                    ft.Text(value='Dalton Peixoto', theme_style=ft.TextThemeStyle.BODY_LARGE),
+                    ft.Text(value='Marcus Sullivan', theme_style=ft.TextThemeStyle.BODY_LARGE),
                     ft.Text(value='Desenvolvedor Fullstack', theme_style=ft.TextThemeStyle.BODY_MEDIUM)
                 ],
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
@@ -44,14 +44,14 @@ class SidebarContent(ft.UserControl):
                 ft.Row(
                     controls=[
                         ft.Text(value='Cidade:', theme_style=ft.TextThemeStyle.BODY_LARGE),
-                        ft.Text(value='São Paulo', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                        ft.Text(value='Rio de Janeiro', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 ),
                 ft.Row(
                     controls=[
                         ft.Text(value='Idade:', theme_style=ft.TextThemeStyle.BODY_LARGE),
-                        ft.Text(value='28', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                        ft.Text(value='45', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 ),
@@ -61,18 +61,21 @@ class SidebarContent(ft.UserControl):
         languages = ft.Row(
             controls=[
                 SkillRing(title='Português', value=1),
-                SkillRing(title='Inglês', value=1),
+                SkillRing(title='Inglês', value=0.8),
                 SkillRing(title='Espanhol', value=0.5),
             ]
         )
 
         skills = ft.Column(
             controls=[
-                SkillProgressBar(title='HTML', value=1),
-                SkillProgressBar(title='CSS', value=1),
                 SkillProgressBar(title='PYTHON', value=1),
-                SkillProgressBar(title='JS', value=0.8),
-                SkillProgressBar(title='PHP', value=0.6),
+                SkillProgressBar(title='FLUTTER', value=0.6),
+                SkillProgressBar(title='JAVA SCRIPT', value=0.5),
+                SkillProgressBar(title='JAVA', value=0.6),
+                SkillProgressBar(title='ADVPL/PROTHEUS', value=1),
+                SkillProgressBar(title='BANCO DE DADOS', value=1),
+                SkillProgressBar(title='SISTEMAS OPERACIONAIS', value=1),
+                SkillProgressBar(title='DEVOPS', value=0.8),
             ]
         )
 
@@ -80,24 +83,48 @@ class SidebarContent(ft.UserControl):
             controls=[
                 ft.ListTile(
                     leading=ft.Icon(name=ft.icons.CHECK, color=ft.colors.PRIMARY),
-                    title=ft.Text(value='Flet', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                    title=ft.Text(value='Scripting, bash, sh, Python, Windows bach script and PowerShell', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
                 ),
                 ft.ListTile(
                     leading=ft.Icon(name=ft.icons.CHECK, color=ft.colors.PRIMARY), 
-                    title=ft.Text(value='Versionamento com GIT', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                    title=ft.Text(value='Languages - Python, ADVPL (ERP Protheus), Java, C#, Flutter, PHP, Java Script and also HTML and CSS', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
                 ),
                 ft.ListTile(
                     leading=ft.Icon(name=ft.icons.CHECK, color=ft.colors.PRIMARY), 
-                    title=ft.Text(value='Bootstrap, Webpack, Framer Motion, Tailwind', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                    title=ft.Text(value='Database - MSSQL, Oracle, Mysql, and Postgresql', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
                 ),
                 ft.ListTile(
                     leading=ft.Icon(name=ft.icons.CHECK, color=ft.colors.PRIMARY), 
-                    title=ft.Text(value='Typescript, ReactJS, Angular', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                    title=ft.Text(value='DevOps - Git, Docker, Docker-Compose, Swarm, Vagrant, and Kubernetes', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
                 ),
                 ft.ListTile(
                     leading=ft.Icon(name=ft.icons.CHECK, color=ft.colors.PRIMARY), 
-                    title=ft.Text(value='Django, Flask, FastAPI', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                    title=ft.Text(value='Virtualization - VirtualBox, Hyper-V, VMWare, and Xen', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
                 ),
+                ft.ListTile(
+                    leading=ft.Icon(name=ft.icons.CHECK, color=ft.colors.PRIMARY), 
+                    title=ft.Text(value='Operational Systems - Linux, Windows, MAC OS, HP-UX and Solaris', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                ),
+                ft.ListTile(
+                    leading=ft.Icon(name=ft.icons.CHECK, color=ft.colors.PRIMARY), 
+                    title=ft.Text(value='Monitoring - Zabbix, Cacti and Nagios', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                ),
+                ft.ListTile(
+                    leading=ft.Icon(name=ft.icons.CHECK, color=ft.colors.PRIMARY), 
+                    title=ft.Text(value='Cloud Computing - Google Cloud, Amazon Cloud, Microsoft Azure, and OpenStack', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                ),
+                ft.ListTile(
+                    leading=ft.Icon(name=ft.icons.CHECK, color=ft.colors.PRIMARY), 
+                    title=ft.Text(value='ERP TOTVS Protheus, TOTVS RM and Sankhya', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                ),
+                ft.ListTile(
+                    leading=ft.Icon(name=ft.icons.CHECK, color=ft.colors.PRIMARY), 
+                    title=ft.Text(value='ECM - TOTVS Fluig, Alfresco and M-Files', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                ),
+                ft.ListTile(
+                    leading=ft.Icon(name=ft.icons.CHECK, color=ft.colors.PRIMARY), 
+                    title=ft.Text(value='Agile Development, Agile Infrastructure, ITIL, PMBOK-based Project Management', theme_style=ft.TextThemeStyle.BODY_MEDIUM),
+                )
             ],
             alignment=ft.MainAxisAlignment.START,
             spacing=0,
@@ -109,7 +136,7 @@ class SidebarContent(ft.UserControl):
             style=ft.ButtonStyle(color=ft.colors.GREY),
             icon=ft.icons.DOWNLOAD,
             icon_color=ft.colors.GREY,
-            url='https://drive.google.com/uc?export=download&id=1vHKz5-tKDC_HMwqaGYMbsAicGrKPwyFL',
+            url='https://drive.google.com/file/d/1JhVP355VhBD_MqIiV6topQFU1Cr67QsI/view?usp=sharing',
 
             # https://sites.google.com/site/gdocs2direct/?pli=1
         )
@@ -143,19 +170,19 @@ class SidebarFooter(ft.UserControl):
                 controls=[
                     ft.IconButton(
                         content=ft.Image(src='icons/001-instagram.png', height=15, color='white'),
-                        url='https://www.instagram.com/programadoraventureiro/',
+                        url='https://www.instagram.com/msullivancm/',
                     ),
                     ft.IconButton(
                         content=ft.Image(src='icons/002-linkedin.png', height=15, color='white'),
-                        url='https://www.linkedin.com/company/66876059',
+                        url='https://www.linkedin.com/in/msullivancm',
                     ),
                     ft.IconButton(
                         content=ft.Image(src='icons/003-github.png', height=15, color='white'),
-                        url='https://github.com/Programador-Aventureiro',
+                        url='https://github.com/msullivancm',
                     ),
                     ft.IconButton(
                         content=ft.Image(src='icons/004-youtube.png', height=15, color='white'),
-                        url='https://www.youtube.com/@ProgramadorAventureiro',
+                        url='https://www.youtube.com/channel/UCEfRP-wXeAu68i1aY5fLfRA',
                     ),
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,

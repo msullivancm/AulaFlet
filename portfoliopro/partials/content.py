@@ -241,7 +241,7 @@ class MainContent(ft.UserControl):
                         col={'xs': 6, 'md': 3},
                         spans=[
                             ft.TextSpan(
-                                text='15 + ',
+                                text='27 + ',
                                 style=ft.TextStyle(
                                     color=ft.colors.PRIMARY,
                                     weight=ft.FontWeight.W_900,
@@ -413,9 +413,9 @@ class MainContent(ft.UserControl):
         testimonials = Carousel(
             controls=[
                 TestimonialItem(
-                    user='Paula Rocha', 
-                    job= 'Desenvolvedora júnior', 
-                    testimonial= 'O trabalho do Dalton é realmente incrível, seus projetos são muito bonitos! Nunca pensei que desse pra clonar um site inteiro apenas com Python!!!', 
+                    user='Diego Lacerda', 
+                    job= 'IT Manager at B2W Digital', 
+                    testimonial= '"Marcus (at TIBrasil.net) is a very valuable professional, skilled and communicative. I had the honor of working with him in IT Consultant team and later being leaded by him. Regarding his professional skills, he was able to solve complicated problems in our customers holding all of his positions at Lan Designers."', 
                     image_src='images/testimonial-1-280x280.jpg',
                 ),
                 TestimonialItem(

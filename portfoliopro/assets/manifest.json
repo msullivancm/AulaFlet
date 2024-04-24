@@ -1,10 +1,10 @@
 {
-    "name": "Portfólio PRO por Programador Aventureiro",
-    "short_name": "Portfólio PRO",
+    "name": "Portfólio TIBrasil.net",
+    "short_name": "Portfólio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000",
-    "description": "Projeto desenvolvido no curso Flet 360 do Programador Aventureiro!",
+    "description": "TIBrasil.net - Portfólio de projetos e trabalhos realizados por Marcus Sullivan",
     "orientation": "natural"
 }
